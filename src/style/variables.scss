@@ -1,0 +1,39 @@
+@use "sass:math";
+
+/* Color palette */
+$green-200: hsl(173, 61%, 77%);
+$green-400: hsl(172, 67%, 45%);
+$green-750: hsl(183, 79%, 24%);
+$green-800: hsl(183, 85%, 21%);
+$green-900: hsl(183, 100%, 15%);
+
+$grey-50:  hsl(189, 47%, 97%);
+$grey-200: hsl(185, 41%, 84%);
+$grey-300: hsl(184, 19%, 68%);
+$grey-400: hsl(184, 14%, 56%);
+$grey-500: hsl(186, 14%, 43%);
+$grey-550: hsl(180, 18%, 40%);
+$grey-600: hsl(180, 25%, 32%);
+
+$white: hsl(0, 100%, 100%);
+$black: hsl(0, 0%, 0%);
+$orange: hsl(13, 70%, 60%);
+
+
+// Functions
+$root-font-size: 16 !default;
+@function toRem($value) {
+  @return math.div($value, $root-font-size) * 1rem;
+}
+
+// Typography
+$font-family: 'Space Mono', sans-serif;
+$font-weight: 700;
+$font-size-48: toRem(48);
+$font-size-24: toRem(24);
+$font-size-20: toRem(20);
+$font-size-16: toRem(16);
+$font-size-13: toRem(13);
+
+$letter-spacing: toRem(-1);
+$letter-spacing: toRem(-0.67);

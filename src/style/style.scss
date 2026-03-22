@@ -1,0 +1,24 @@
+@use 'variables' as *;
+@use 'mobile';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height:100vh;
+  background-color: $grey-200;
+  font-family: $font-family;
+}
+
+header {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:toRem(50) 0 toRem(40) 0;
+}

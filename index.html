@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Tip calculator app</title>
+	
+</head>
+<body>
+	<header>
+		<img src="images/logo.svg" alt="Splitter Logo Image">
+	</header>
+	<main>
+		<div class="splitter-container">
+			<section role="tip-settings" aria-label="Tip Settings Area">
+				<label class="tip-label" for="bill">Bill</label>
+					<input type="number" placeholder="0.00" inputmode="numeric" step="0.01" id="bill">
+				<label class="tip-label">Select Tip %</label>
+				<div class="tip-container">
+					<button class="tip-button" type="button">5%</button>
+					<button class="tip-button" type="button">10%</button>
+					<button class="tip-button" type="button">15%</button>
+					<button class="tip-button" type="button">25%</button>
+					<button class="tip-button" type="button">50%</button>
+					<button class="tip-button" type="button">Custom</button>
+				</div>
+				<label class="tip-label" for="number-of-people">Number of People</label><span class="tip-label error-label">Can't be zero</span>
+					<input type="number" placeholder="0" inputmode="numeric" id="number-of-people">
+				
+			</section>
+		</div>
+	</main>
+  
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset
+  
+<script type="module" src="src/ts/main.ts ">  </script>
+</body>
+</html>

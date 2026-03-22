@@ -1,0 +1,89 @@
+@use 'variables' as *;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.splitter-container {
+  width: 100%;
+  background-color: $white;
+  padding: toRem(24);
+  border-radius: toRem(25) toRem(25) 0 0;
+
+  .tip-label {
+    display: block;
+    font-size: $font-size-16;
+    margin-bottom: toRem(8);
+    margin-top: toRem(40);
+    color: $grey-500;
+  }
+
+  .error-label {
+    color: $orange;
+  }
+
+  input[ type=number] {
+    width: 100%;
+    height: toRem(48);
+    border-radius: toRem(5);
+    border:none;
+    padding: 0 toRem(16);
+    font-size: $font-size-24;
+    font-weight: $font-weight;
+    background: $grey-50;
+    cursor: pointer;
+    text-align: right;
+    color: $green-900;
+    &:focus,
+    &:active,
+    &:hover {
+    outline: toRem(2) solid $green-400;
+    }
+  }
+
+  .tip-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: toRem(16);
+    align-items: center;
+    justify-content: center;
+
+    .tip-button {
+      width: toRem(147);
+      height: toRem(48);
+      border-radius: toRem(5);
+      border: none;
+      background-color: $green-900;
+      color: $white;
+      font-weight: $font-weight;
+      font-size: $font-size-24;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $green-200;
+        color: $green-900;
+      }
+
+
+    }
+    :last-child {
+      background-color:$grey-50;
+      color:$grey-500;
+
+      &:hover {
+        background-color: $grey-50;
+        color:$grey-500;
+      }
+    }
+  }
+}
+
+

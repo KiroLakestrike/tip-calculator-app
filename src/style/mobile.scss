@@ -17,6 +17,8 @@ input[type=number] {
   padding: toRem(24);
   border-radius: toRem(25) toRem(25) 0 0;
 
+
+
   .tip-label {
     display: block;
     font-size: $font-size-16;
@@ -26,38 +28,70 @@ input[type=number] {
   }
 
   .error-label {
+    display: none;
     color: $orange;
   }
 
-  input[ type=number] {
+  .error-label.show {
+    display: block;
+  }
+
+  .error-label {
+    color: $orange;
+  }
+
+  .number-input {
     width: 100%;
     height: toRem(48);
     border-radius: toRem(5);
-    border:none;
+    border: none;
     padding: 0 toRem(16);
     font-size: $font-size-24;
-    font-weight: $font-weight;
     background: $grey-50;
     cursor: pointer;
     text-align: right;
     color: $green-900;
+    font-family: $font-family;
+    font-weight: $font-weight;
+
     &:focus,
     &:active,
     &:hover {
-    outline: toRem(2) solid $green-400;
+      outline: toRem(2) solid $green-400;
     }
   }
 
-  .tip-container {
+  #bill-input{
+        background: url('/src/assets/icon-dollar.svg') no-repeat 16px center;
+        background-size: 12px 16px;
+        padding-left: 40px;
+  }
+
+  #people-input {
+    background: url('/src/assets/icon-person.svg') no-repeat 16px center;
+    background-size: 12px 16px;
+    padding-left: 40px;
+  }
+
+  .error-input {
+    outline: toRem(2) solid $orange;
+  }
+
+  .label-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: toRem(16);
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+  }
+
+  .tip-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: toRem(16);
+    column-gap: toRem(16);
 
     .tip-button {
-      width: toRem(147);
+      width: 100%;
       height: toRem(48);
       border-radius: toRem(5);
       border: none;
@@ -71,8 +105,65 @@ input[type=number] {
         background-color: $green-200;
         color: $green-900;
       }
+    }
 
+    #tip-5{
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    #tip-10{
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    #tip-15{
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    #tip-25{
+      grid-area: 2 / 2 / 3 / 3;
+    }
+    #tip-50{
+      grid-area: 3 / 1 / 4 / 2;
+    }
 
+    .custom-container {
+      grid-area: 3 / 2 / 4 / 3;
+      position: relative;
+
+      .custom-container button,
+      .custom-container input {
+        position: absolute;
+        width: 100%;
+      }
+
+      #custom-button {
+        background-color: $grey-50;
+        color: $grey-550;
+      }
+
+      #custom-input {
+        min-width: 0;
+        width: 100%;
+        height: toRem(48);
+        border-radius: toRem(5);
+        border: none;
+
+        margin:0;
+        font-size: $font-size-24;
+        background: $grey-50;
+        text-align: center;
+        cursor: pointer;
+        color: $green-900;
+        font-family: $font-family;
+        font-weight: $font-weight;
+
+        &:focus,
+        &:active,
+        &:hover {
+          outline: toRem(2) solid $green-400;
+        }
+
+        .error-input {
+          outline: toRem(2) solid $orange;
+        }
+      }
     }
     :last-child {
       background-color:$grey-50;
@@ -81,6 +172,72 @@ input[type=number] {
       &:hover {
         background-color: $grey-50;
         color:$grey-500;
+      }
+    }
+  }
+
+  .total-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: toRem(24);
+    font-size: $font-size-24;
+    font-weight: $font-weight;
+    background-color: $green-900;
+    border-radius:toRem(15);
+    padding: toRem(24);
+
+
+
+    .total-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      gap: toRem(24);
+      margin-bottom: toRem(0);
+
+      .total-labels{
+        display: flex;
+        flex-direction: column;
+
+        :first-child {
+          color: $white;
+          font-size: $font-size-16;
+        }
+        :last-child {
+          color: $grey-400;
+          font-size: $font-size-13;
+        }
+      }
+
+      span {
+        color: $green-400;
+        font-size: $font-size-32;
+      }
+    }
+    .reset-button {
+      width: 100%;
+      height: toRem(48);
+      border-radius: toRem(5);
+      border: none;
+      background-color: $green-400;
+      color: $green-900;
+      font-weight: $font-weight;
+      font-size: $font-size-20;
+      cursor: pointer;
+      margin-top: toRem(24);
+
+      &:hover {
+        background-color: $green-200;
+        color: $green-900;
+      }
+
+      &:disabled {
+        background-color: $green-800;
+        color: $green-750;
+        cursor: not-allowed;
       }
     }
   }

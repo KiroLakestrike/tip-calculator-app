@@ -18,32 +18,59 @@
 	<main>
 		<div class="splitter-container">
 			<section role="tip-settings" aria-label="Tip Settings Area">
-				<label class="tip-label" for="bill">Bill</label>
-					<input type="number" placeholder="0.00" inputmode="numeric" step="0.01" id="bill">
+				<div class="label-container">
+					<label class="tip-label" for="bill-input">Bill</label>
+					<span class="tip-label error-label hide" id="bill-error">Can't be zero</span>
+				</div>
+					<input
+							class="number-input"
+							type="text"
+							placeholder="0.00"
+							inputmode="decimal"
+							id="bill-input"
+					>
 				<label class="tip-label">Select Tip %</label>
 				<div class="tip-container">
-					<button class="tip-button" type="button">5%</button>
-					<button class="tip-button" type="button">10%</button>
-					<button class="tip-button" type="button">15%</button>
-					<button class="tip-button" type="button">25%</button>
-					<button class="tip-button" type="button">50%</button>
-					<button class="tip-button" type="button">Custom</button>
+					<button class="tip-button percent" type="button" data-percent="5" id="tip-5">5%</button>
+					<button class="tip-button percent" type="button" data-percent="10" id="tip-10">10%</button>
+					<button class="tip-button percent" type="button" data-percent="15" id="tip-15">15%</button>
+					<button class="tip-button percent" type="button" data-percent="25" id="tip-25">25%</button>
+					<button class="tip-button percent" type="button" data-percent="50" id="tip-50">50%</button>
+					<div class="custom-container">
+						<button class="tip-button" type="button" id="custom-button">Custom</button>
+						<input class="custom-input hide" type="number" placeholder="0" inputmode="numeric" id="custom-input">
+					</div>
 				</div>
-				<label class="tip-label" for="number-of-people">Number of People</label><span class="tip-label error-label">Can't be zero</span>
-					<input type="number" placeholder="0" inputmode="numeric" id="number-of-people">
 				
+				<div class="label-container">
+					<label class="tip-label" for="people-input">Number of People</label>
+					<span class="tip-label error-label hide" id="people-error">Can't be zero</span>
+				</div>
+					<input class="number-input" type="number" placeholder="0" inputmode="numeric" id="people-input">
+				<div class="total-container">
+					<div class="total-row">
+						<div class="total-labels">
+							<p>Tip Amount</p>
+							<p>/ person</p>
+							
+						</div>
+						<span id="tip-per-person">$0.00</span>
+					</div>
+					<div class="total-row">
+						<div class="total-labels">
+							<p>Total </p>
+							<p>/ person</p>
+						</div>
+						<span id="total-per-person">$0.00</span>
+					</div>
+					<button type="reset" class="reset-button" id="reset-button" disabled>RESET</button>
+				</div>
 			</section>
 		</div>
 	</main>
   
 
-  Tip Amount
-  / person
 
-  Total
-  / person
-
-  Reset
   
 <script type="module" src="src/ts/main.ts ">  </script>
 </body>

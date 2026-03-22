@@ -1,79 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
-  <title>Frontend Mentor | Tip calculator app</title>
-	
+	<title>Frontend Mentor | Tip calculator app</title>
+
 </head>
 <body>
-	<header>
-		<img src="images/logo.svg" alt="Splitter Logo Image">
-	</header>
-	<main>
-		<div class="splitter-container">
-			<section aria-label="Tip Settings Area">
-				<div class="label-container">
-					<label class="tip-label" for="bill-input">Bill</label>
-					<span class="tip-label error-label hide" id="bill-error">Can't be zero</span>
+<header>
+	<img src="images/logo.svg" alt="Splitter Logo Image">
+</header>
+<main>
+	<div class="splitter-container">
+		<section aria-label="Tip Settings Area">
+			<div class="label-container">
+				<label class="tip-label" for="bill-input">Bill</label>
+				<span class="tip-label error-label hide" id="bill-error">Can't be zero</span>
+			</div>
+			<input
+					class="number-input"
+					type="number"
+					placeholder="0.00"
+					inputmode="decimal"
+					id="bill-input"
+			>
+			<label class="tip-label">Select Tip %</label>
+			<div class="tip-container">
+				<button class="tip-button percent" type="button" data-percent="5" id="tip-5">5%</button>
+				<button class="tip-button percent" type="button" data-percent="10" id="tip-10">10%</button>
+				<button class="tip-button percent" type="button" data-percent="15" id="tip-15">15%</button>
+				<button class="tip-button percent" type="button" data-percent="25" id="tip-25">25%</button>
+				<button class="tip-button percent" type="button" data-percent="50" id="tip-50">50%</button>
+				<div class="custom-container">
+					<button class="tip-button last" type="button" id="custom-button">Custom</button>
+					<input class="custom-input hide" type="number" placeholder="0" inputmode="numeric" id="custom-input">
 				</div>
-					<input
-							class="number-input"
-							type="number"
-							placeholder="0.00"
-							inputmode="decimal"
-							id="bill-input"
-					>
-				<label class="tip-label">Select Tip %</label>
-				<div class="tip-container">
-					<button class="tip-button percent" type="button" data-percent="5" id="tip-5">5%</button>
-					<button class="tip-button percent" type="button" data-percent="10" id="tip-10">10%</button>
-					<button class="tip-button percent" type="button" data-percent="15" id="tip-15">15%</button>
-					<button class="tip-button percent" type="button" data-percent="25" id="tip-25">25%</button>
-					<button class="tip-button percent" type="button" data-percent="50" id="tip-50">50%</button>
-					<div class="custom-container">
-						<button class="tip-button last" type="button" id="custom-button">Custom</button>
-						<input class="custom-input hide" type="number" placeholder="0" inputmode="numeric" id="custom-input">
+			</div>
+			
+			<div class="label-container">
+				<label class="tip-label" for="people-input">Number of People</label>
+				<span class="tip-label error-label hide" id="people-error">Can't be zero</span>
+			</div>
+			<input class="number-input" type="number" placeholder="0" inputmode="numeric" id="people-input">
+		</section>
+		<section aria-label="Tip Settings Area" id="total-section">
+			<div class="total-container">
+				<div class="total-row">
+					<div class="total-labels">
+						<p class="heading">Tip Amount</p>
+						<p class="info">/ person</p>
+					
 					</div>
+					<span id="tip-per-person">$0.00</span>
 				</div>
-				
-				<div class="label-container">
-					<label class="tip-label" for="people-input">Number of People</label>
-					<span class="tip-label error-label hide" id="people-error">Can't be zero</span>
-				</div>
-					<input class="number-input" type="number" placeholder="0" inputmode="numeric" id="people-input">
-			</section>
-			<section aria-label="Tip Settings Area" id="total-section">
-				<div class="total-container">
-					<div class="total-row">
-						<div class="total-labels">
-							<p class="heading">Tip Amount</p>
-							<p class="info">/ person</p>
-							
-						</div>
-						<span id="tip-per-person">$0.00</span>
+				<div class="total-row">
+					<div class="total-labels">
+						<p class="heading">Total </p>
+						<p class="info">/ person</p>
 					</div>
-					<div class="total-row">
-						<div class="total-labels">
-							<p class="heading">Total </p>
-							<p class="info">/ person</p>
-						</div>
-						<span id="total-per-person">$0.00</span>
-					</div>
-					<button type="button" class="reset-button" id="reset-button" disabled>RESET</button>
+					<span id="total-per-person">$0.00</span>
 				</div>
-			</section>
-		</div>
-	</main>
-  
+				<button type="button" class="reset-button" id="reset-button" disabled>RESET</button>
+			</div>
+		</section>
+	</div>
+</main>
 
-
-  
-<script type="module" src="src/ts/main.ts "></script>
+<script type="module" src="./src/ts/main.ts"></script>
 </body>
 </html>

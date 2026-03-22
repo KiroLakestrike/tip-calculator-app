@@ -17,14 +17,14 @@
 	</header>
 	<main>
 		<div class="splitter-container">
-			<section role="tip-settings" aria-label="Tip Settings Area">
+			<section aria-label="Tip Settings Area">
 				<div class="label-container">
 					<label class="tip-label" for="bill-input">Bill</label>
 					<span class="tip-label error-label hide" id="bill-error">Can't be zero</span>
 				</div>
 					<input
 							class="number-input"
-							type="text"
+							type="number"
 							placeholder="0.00"
 							inputmode="decimal"
 							id="bill-input"
@@ -37,7 +37,7 @@
 					<button class="tip-button percent" type="button" data-percent="25" id="tip-25">25%</button>
 					<button class="tip-button percent" type="button" data-percent="50" id="tip-50">50%</button>
 					<div class="custom-container">
-						<button class="tip-button" type="button" id="custom-button">Custom</button>
+						<button class="tip-button last" type="button" id="custom-button">Custom</button>
 						<input class="custom-input hide" type="number" placeholder="0" inputmode="numeric" id="custom-input">
 					</div>
 				</div>
@@ -47,23 +47,25 @@
 					<span class="tip-label error-label hide" id="people-error">Can't be zero</span>
 				</div>
 					<input class="number-input" type="number" placeholder="0" inputmode="numeric" id="people-input">
+			</section>
+			<section aria-label="Tip Settings Area" id="total-section">
 				<div class="total-container">
 					<div class="total-row">
 						<div class="total-labels">
-							<p>Tip Amount</p>
-							<p>/ person</p>
+							<p class="heading">Tip Amount</p>
+							<p class="info">/ person</p>
 							
 						</div>
 						<span id="tip-per-person">$0.00</span>
 					</div>
 					<div class="total-row">
 						<div class="total-labels">
-							<p>Total </p>
-							<p>/ person</p>
+							<p class="heading">Total </p>
+							<p class="info">/ person</p>
 						</div>
 						<span id="total-per-person">$0.00</span>
 					</div>
-					<button type="reset" class="reset-button" id="reset-button" disabled>RESET</button>
+					<button type="button" class="reset-button" id="reset-button" disabled>RESET</button>
 				</div>
 			</section>
 		</div>
@@ -72,6 +74,6 @@
 
 
   
-<script type="module" src="src/ts/main.ts ">  </script>
+<script type="module" src="src/ts/main.ts "></script>
 </body>
 </html>

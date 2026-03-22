@@ -7,9 +7,7 @@ export function validateInput(input: HTMLInputElement, error: HTMLSpanElement, )
         error.classList.add('show');
         error.classList.remove('hide');
         error.innerHTML = 'Can\'t be zero';
-    }
-
-    if (!regex.test(input.value)) {
+    } else if (!regex.test(input.value)) {
         input.classList.add('error-input');
         error.classList.add('show');
         error.classList.remove('hide');
